@@ -1,5 +1,3 @@
-<h1 align="center"> <img alt="Orion Station" width="420" height="120" src="https://raw.githubusercontent.com/AtaraxiaSpaceFoundation/asset-dump/refs/heads/master/OrionStation/Orion-Banner-Big.png" /> </h1>
-
 <p align="center">
   Ваш проводник в космический симулятор безумия!<br>
   Основан на идеях <a href="https://github.com/tgstation/tgstation">/tg/station</a> и <a href="https://github.com/shiptest-ss13/Shiptest">Shiptest</a> из Space Station 13.
@@ -14,53 +12,28 @@
 
 ---
 
-**Orion** — это русскоязычный форк [Goob Station](https://github.com/Goob-Station/Goob-Station), который стремится возродить дух классического геймплея Space Station 13, черпая вдохновение из таких проектов, как [/tg/station](https://github.com/tgstation/tgstation) и [Shiptest](https://github.com/shiptest-ss13/Shiptest). Мы фокусируемся на сочетании проверенных временем механик с инновационными идеями, создавая уникальный и приятный опыт игры в космическое безумие.
+**Arcane Station** — это форк [Orion-Station-14](https://github.com/AtaraxiaSpaceFoundation/Orion-Station-14), в свою очередь являющийся русскоязычным форком [Goob Station](https://github.com/Goob-Station/Goob-Station), который стремится возродить дух классического геймплея Space Station 13, черпая вдохновение из таких проектов, как [/tg/station](https://github.com/tgstation/tgstation) и [Shiptest](https://github.com/shiptest-ss13/Shiptest).
 
----
+<!-- ---
 
 <div align="center">
-    
+
 ## Ссылки
 
 </div>
 
 [<img src="https://github.com/AtaraxiaSpaceFoundation/asset-dump/blob/master/Misc/Discord/discord-banner.png" alt="Discord" width="150" align="left">](https://discord.gg/K48JujjjsC)
-**[Discord Server](https://discord.gg/K48JujjjsC)**<br>В космосе вас никто не услышит.
+**[Discord Server](https://discord.gg/K48JujjjsC)**<br>В космосе вас никто не услышит. -->
 
-[<img src="https://i.imgur.com/XiS9QP5.png" alt="ASF" width="150" align="left">](https://github.com/AtaraxiaSpaceFoundation)
-**[Ataraxia Space Foundation](https://github.com/AtaraxiaSpaceFoundation)**<br>Специализируемся на разработке этого билда.
 
 ---
 <div align="center">
 
 ## Активность репозитория
 
-![Активность PR](https://repobeats.axiom.co/api/embed/fb55493406a54b21282bac43ecb28472b47a762c.svg "ZZZ")
+![Активность PR](https://repobeats.axiom.co/api/embed/27b2e1562b39ab9114e0dd3c1576b3078b1550c4.svg "Repobeats")
 
 </div>
-
----
-<div align="center">
-
-## Политика Orion
-
-Любой сервер, заявляющий, что он является официальным представителем этого билда — не одобрен этой организацией.
-Однако мы хотели бы пригласить всех желающих создать сервер на базе билда Orion.
-
-</div>
-
-> [!WARNING]  
-> **Orion не имеет официальных игровых серверов**.
-
----
-
-<div align="center">
-
-## Документация
-
-</div>
-
-Проект имеет обширную [документацию](https://docs.goobstation.com/), которая охватывает все аспекты: от контента и сборки до движка, дизайна игры и многого другого. Это также отличный ресурс для новичков, желающих внести свой вклад в разработку.
 
 ---
 <div align="center">
@@ -79,12 +52,6 @@
 </div>
 
 </div>
-
-> [!TIP]
-> Используйте [IDE Rider](https://github.com/designinlife/jetbrains), он неимоверно облегчит вам жизнь, если вы собираетесь влиться в разработку (код), или билдить сборку, больше пары раз.
-
-Следуйте гайду от [Джубами](https://docs.goobstation.com/en/general-development/setup.html) по настройке рабочей среды, но учитывайте, что репозитории отличаются друг от друга и некоторые вещи могут отличаться.
-Ниже перечислены скрипты и методы облегчающие работу с билдом.
 
 ### Windows
 
@@ -134,5 +101,3 @@ By submitting a pull request or making a commit to the Ataraxia Space Foundation
 
 > [!NOTE]
 > Some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
-
-<h1 align="right"> <img alt="Orion Station" src="https://raw.githubusercontent.com/AtaraxiaSpaceFoundation/asset-dump/refs/heads/master/OrionStation/Orion-Banner-Small.png" />  </h1>

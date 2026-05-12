@@ -18,7 +18,7 @@
 - type: species
   id: Oni
   name: species-name-oni
-  roundStart: false
+  roundStart: false # Arcane-Edit: disabled for round start
   prototype: MobOni
   dollPrototype: MobOniDummy
   markingLimits: MobOniMarkingLimits

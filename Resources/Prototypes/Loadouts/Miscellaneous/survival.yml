@@ -137,7 +137,7 @@
     - Tajaran
     - Chitinid # DeltaV
     - Shadowkin
-    - Demon # Arcane
+    - Demon # Arcane-Edit
 
 # Goobstation start
 - type: loadoutEffectGroup
@@ -216,7 +216,7 @@
     - Resomi
     - Tajaran
     - Shadowkin
-    - Demon # Arcane
+    - Demon # Arcane-Edit
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth

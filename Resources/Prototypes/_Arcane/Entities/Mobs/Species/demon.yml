@@ -61,6 +61,21 @@
   - type: Inventory
     speciesId: demon
 
+# Arcane-Edit-Start
+- type: entity
+  parent: BaseMobDemon
+  id: MobDemonRandom
+  name: Urist McDemon
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - NamesHumanFirst
+    - NamesHumanLast
+    nameFormat: name-format-standard
+# Arcane-Edit-End
+
 - type: entity
   save: false
   name: Urist McHands

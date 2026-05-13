@@ -6,6 +6,7 @@
   components:
   - type: Icon
     sprite: _Arcane/Mobs/Species/Demon/parts.rsi
+    state: torso_m
   - type: BodyPart
     species: Demon
   - type: Extractable

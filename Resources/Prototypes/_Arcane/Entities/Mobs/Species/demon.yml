@@ -11,10 +11,6 @@
     - HeadSide
   - type: Hunger
   - type: Thirst
-    dehydrationDamage:
-      types:
-        Bloodloss: 0.5
-        Asphyxiation: 0.5
   - type: Icon
     sprite: _Arcane/Mobs/Species/Demon/parts.rsi
     state: full_m
@@ -61,7 +57,6 @@
   - type: Inventory
     speciesId: demon
 
-# Arcane-Edit-Start
 - type: entity
   parent: BaseMobDemon
   id: MobDemonRandom
@@ -71,10 +66,9 @@
   - type: RandomHumanoidAppearance
   - type: RandomMetadata
     nameSegments:
-    - NamesHumanFirst
-    - NamesHumanLast
+    - NamesFirst
+    - NamesLast
     nameFormat: name-format-standard
-# Arcane-Edit-End
 
 - type: entity
   save: false

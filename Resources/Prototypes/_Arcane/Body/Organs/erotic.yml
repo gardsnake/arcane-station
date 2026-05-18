@@ -1,6 +1,6 @@
-# Base for erotic organs — internal only, not physical items.
 - type: entity
   id: BaseEroticOrgan
+  parent: BaseItem
   abstract: true
   components:
   - type: Organ

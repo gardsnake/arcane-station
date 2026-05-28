@@ -20,5 +20,5 @@ marking-HumanoidXenoTracheasPretor = Трахеи преторианца
 marking-HumanoidXenoTracheasQueen = Трахеи королевы
 marking-HumanoidXenoTracheasRavager = Трахеи разрушителя
 marking-HumanoidXenoLegsPredalien = Ноги предалиена
-marking-HumanoidXenoArmsPredalien =  Руки предалиена
+marking-HumanoidXenoArmsPredalien = Руки предалиена
 marking-HumanoidXenoArmsRavager = Руки разрушителя

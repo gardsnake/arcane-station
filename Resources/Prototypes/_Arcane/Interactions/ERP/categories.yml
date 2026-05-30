@@ -9,3 +9,31 @@
 - type: panelInteractionCategory
   id: Penis
   name: Член
+
+- type: panelInteractionCategory
+  id: Face
+  name: Лицо
+
+- type: panelInteractionCategory
+  id: Butt
+  name: Попа
+
+- type: panelInteractionCategory
+  id: Vagin
+  name: Вагина
+
+- type: panelInteractionCategory
+  id: Boobs
+  name: Грудь
+
+- type: panelInteractionCategory
+  id: Friendship
+  name: Дружба
+
+- type: panelInteractionCategory
+  id: Tale
+  name: Хвост
+
+- type: panelInteractionCategory
+  id: Anus
+  name: Анус

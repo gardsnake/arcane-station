@@ -41,6 +41,14 @@
     sprite: /Textures/_Arcane/Effects/genitals_effects.rsi
     layers:
     - state: semen1
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        semen1: ""
+        semen2: ""
+        semen3: ""
+        semen4: ""
   - type: IconSmooth
     key: semen_puddles
     mode: NoSprite
@@ -69,6 +77,14 @@
     sprite: /Textures/_Arcane/Effects/genitals_effects.rsi
     layers:
     - state: fem1
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        fem1: ""
+        fem2: ""
+        fem3: ""
+        fem4: ""
   - type: IconSmooth
     key: femcum_puddles
     mode: NoSprite

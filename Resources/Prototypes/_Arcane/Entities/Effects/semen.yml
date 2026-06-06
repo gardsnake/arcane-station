@@ -1,55 +1,7 @@
 - type: entity
-  id: PuddleSemen1
+  id: PuddleSemen
   parent: PuddleSemenBase
 
 - type: entity
-  id: PuddleSemen2
-  parent: PuddleSemenBase
-  components:
-  - type: Sprite
-    layers:
-    - state: semen2
-
-- type: entity
-  id: PuddleSemen3
-  parent: PuddleSemenBase
-  components:
-  - type: Sprite
-    layers:
-    - state: semen3
-
-- type: entity
-  id: PuddleSemen4
-  parent: PuddleSemenBase
-  components:
-  - type: Sprite
-    layers:
-    - state: semen4
-
-- type: entity
-  id: PuddleFemCum1
+  id: PuddleFemCum
   parent: PuddleFemCumBase
-
-- type: entity
-  id: PuddleFemCum2
-  parent: PuddleFemCumBase
-  components:
-  - type: Sprite
-    layers:
-    - state: fem2
-
-- type: entity
-  id: PuddleFemCum3
-  parent: PuddleFemCumBase
-  components:
-  - type: Sprite
-    layers:
-    - state: fem3
-
-- type: entity
-  id: PuddleFemCum4
-  parent: PuddleFemCumBase
-  components:
-  - type: Sprite
-    layers:
-    - state: fem4

@@ -8,13 +8,6 @@ public sealed class CumOverlaySystem : EntitySystem
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
-    private static readonly ResPath OverlayRsi = new("/Textures/_Arcane/Effects/cumoverlay.rsi");
-
-    private enum CumOverlayLayer : byte
-    {
-        Base,
-    }
-
     public override void Initialize()
     {
         base.Initialize();
@@ -39,7 +32,7 @@ public sealed class CumOverlaySystem : EntitySystem
             return;
 
         var sprite = (ent.Owner, spriteComp);
-        if (_sprite.LayerMapTryGet(sprite, CumOverlayLayer.Base, out var layer, false))
+        if (_sprite.LayerMapTryGet(sprite, CumOverlayComponent.Layer.Base, out var layer, false))
             _sprite.RemoveLayer(sprite, layer);
     }
 
@@ -50,12 +43,12 @@ public sealed class CumOverlaySystem : EntitySystem
 
         var sprite = (ent.Owner, spriteComp);
         var state = ent.Comp.Count >= 2 ? "cum_large" : "cum_normal";
-        var spec = new SpriteSpecifier.Rsi(OverlayRsi, state);
+        var spec = new SpriteSpecifier.Rsi(CumOverlayComponent.OverlayRsi, state);
 
-        if (_sprite.LayerMapTryGet(sprite, CumOverlayLayer.Base, out var existing, false))
+        if (_sprite.LayerMapTryGet(sprite, CumOverlayComponent.Layer.Base, out var existing, false))
             _sprite.RemoveLayer(sprite, existing);
 
         var layer = _sprite.AddLayer(sprite, spec);
-        _sprite.LayerMapSet(sprite, CumOverlayLayer.Base, layer);
+        _sprite.LayerMapSet(sprite, CumOverlayComponent.Layer.Base, layer);
     }
 }

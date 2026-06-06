@@ -39,21 +39,13 @@ public sealed class OrgasmSystem : EntitySystem
 
     private static readonly EntProtoId HeartsProto = "EffectHearts";
     private static readonly EntProtoId CumWallProto = "EffectCumWall";
-    private const float EjaculationDistance = 0.6f;
+    private static readonly EntProtoId SemenPuddleProto = "PuddleSemen";
+    private static readonly EntProtoId FemCumPuddleProto = "PuddleFemCum";
+    private const float EjaculationEffectDistance = 0.6f;
+    private const float EjaculationTargetDistance = 1.4f;
     private const float EjaculationBlockedDistance = 0.1f;
     private const float EjaculationWallCheckExtraRange = 0.1f;
-    private const float EjaculationTargetRange = 0.8f;
     private const float EjaculationForwardDot = 0.6f;
-
-    private static readonly EntProtoId[] SemenPuddleProtos =
-    [
-        "PuddleSemen1", "PuddleSemen2", "PuddleSemen3", "PuddleSemen4",
-    ];
-
-    private static readonly EntProtoId[] FemCumPuddleProtos =
-    [
-        "PuddleFemCum1", "PuddleFemCum2", "PuddleFemCum3", "PuddleFemCum4",
-    ];
     private static readonly ProtoId<LocalizedDatasetPrototype> OrgasmMessagesDataset = "OrgasmMessages";
 
     public override void Initialize()
@@ -96,15 +88,15 @@ public sealed class OrgasmSystem : EntitySystem
         if (sex is Sex.Unsexed)
             return;
 
-        var puddleProtos = sex is Sex.Female ? FemCumPuddleProtos : SemenPuddleProtos;
+        var puddleProto = sex is Sex.Female ? FemCumPuddleProto : SemenPuddleProto;
 
         var xform = Transform(uid);
         var (sourcePos, sourceRot) = _transform.GetWorldPositionRotation(xform);
         var sourceMap = _transform.ToMapCoordinates(xform.Coordinates);
         var forward = sourceRot.ToWorldVec();
-        var forwardMap = new MapCoordinates(sourcePos + forward * EjaculationDistance, sourceMap.MapId);
+        var forwardMap = new MapCoordinates(sourcePos + forward * EjaculationEffectDistance, sourceMap.MapId);
 
-        var wallBlocked = !_interaction.InRangeUnobstructed(uid, forwardMap, EjaculationDistance + EjaculationWallCheckExtraRange);
+        var wallBlocked = !_interaction.InRangeUnobstructed(uid, forwardMap, EjaculationEffectDistance + EjaculationWallCheckExtraRange);
         var coords = wallBlocked
             ? new MapCoordinates(sourcePos + forward * EjaculationBlockedDistance, sourceMap.MapId)
             : forwardMap;
@@ -112,7 +104,7 @@ public sealed class OrgasmSystem : EntitySystem
         if (wallBlocked)
             Spawn(CumWallProto, forwardMap);
 
-        var puddle = Spawn(_random.Pick(puddleProtos), coords);
+        var puddle = Spawn(puddleProto, coords);
         _forensics.TransferDna(puddle, uid, false);
 
         var dnaData = _bloodstream.GetEntityBloodData(uid);
@@ -124,7 +116,7 @@ public sealed class OrgasmSystem : EntitySystem
             }
         }
 
-        foreach (var target in _lookup.GetEntitiesInRange<HumanoidAppearanceComponent>(sourceMap, EjaculationDistance + EjaculationTargetRange))
+        foreach (var target in _lookup.GetEntitiesInRange<HumanoidAppearanceComponent>(sourceMap, EjaculationTargetDistance))
         {
             if (target.Owner == uid)
                 continue;
@@ -133,7 +125,7 @@ public sealed class OrgasmSystem : EntitySystem
             if (toTarget == Vector2.Zero || Vector2.Dot(toTarget.Normalized(), forward) < EjaculationForwardDot)
                 continue;
 
-            if (!_interaction.InRangeUnobstructed(uid, target.Owner, EjaculationDistance + EjaculationTargetRange))
+            if (!_interaction.InRangeUnobstructed(uid, target.Owner, EjaculationTargetDistance))
                 continue;
 
             AddCumOverlay(target.Owner);

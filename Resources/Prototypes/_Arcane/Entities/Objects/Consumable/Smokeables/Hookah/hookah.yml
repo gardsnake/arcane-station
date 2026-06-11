@@ -9,6 +9,7 @@
     state: icon
   - type: Item
     size: Huge
+  - type: ContainerContainer
   - type: ItemSlots
     slots:
       hookahp:

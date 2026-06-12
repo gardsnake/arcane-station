@@ -57,6 +57,7 @@ public sealed class TTSSystem : EntitySystem
     {
         base.Shutdown();
         _cfg.UnsubValueChanged(ArtCVars.TTSVolume, OnTtsVolumeChanged);
+        _cfg.UnsubValueChanged(ACCVars.UseTTS, OnUseTTSChanged);
         _contentRoot.Clear();
         _contentRoot.Dispose();
     }
@@ -90,25 +91,30 @@ public sealed class TTSSystem : EntitySystem
         var filePath = new ResPath($"{_fileIdx++}.ogg");
         _contentRoot.AddOrUpdateFile(filePath, ev.Data);
 
-        var audioResource = new AudioResource();
-        audioResource.Load(IoCManager.Instance!, _prefix / filePath);
-
-        var audioParams = AudioParams.Default
-            .WithVolume(AdjustVolume(ev.IsWhisper))
-            .WithMaxDistance(AdjustDistance(ev.IsWhisper));
-
-        if (ev.SourceUid != null)
+        try
         {
-            var sourceUid = GetEntity(ev.SourceUid.Value);
-            if (sourceUid.IsValid())
-                _audio.PlayEntity(audioResource.AudioStream, sourceUid, null, audioParams);
-        }
-        else
-        {
-            _audio.PlayGlobal(audioResource.AudioStream, null, audioParams);
-        }
+            var audioResource = new AudioResource();
+            audioResource.Load(IoCManager.Instance!, _prefix / filePath);
 
-        _contentRoot.RemoveFile(filePath);
+            var audioParams = AudioParams.Default
+                .WithVolume(AdjustVolume(ev.IsWhisper))
+                .WithMaxDistance(AdjustDistance(ev.IsWhisper));
+
+            if (ev.SourceUid != null)
+            {
+                var sourceUid = GetEntity(ev.SourceUid.Value);
+                if (sourceUid.IsValid())
+                    _audio.PlayEntity(audioResource.AudioStream, sourceUid, null, audioParams);
+            }
+            else
+            {
+                _audio.PlayGlobal(audioResource.AudioStream, null, audioParams);
+            }
+        }
+        finally
+        {
+            _contentRoot.RemoveFile(filePath);
+        }
     }
 
     private float AdjustVolume(bool isWhisper)
